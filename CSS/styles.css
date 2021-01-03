@@ -35,6 +35,8 @@
   --overlay-portfolio: rgba(33, 150, 243, 0.9);
   --modal-color: rgba(0, 0, 0, 0.2);
   --form-border-color: rgba(255, 255, 255, 0.3);
+  --form-modal-border-color: rgba(33, 33, 33, 0.2);
+  --modal-comment-text: rgba(117, 117, 117, 0.5);
 }
 
 /* HEADER */
@@ -859,12 +861,16 @@ section {
   position: absolute;
   top: 50%;
   left: 50%;
+  padding: 40px;
   transform: translate(-50%, -50%);
 
   min-height: 582px;
   min-width: 528px;
 
   background-color: var(--primary-background);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 
   transition: transform 250ms var(--timing-function);
 }
@@ -901,12 +907,11 @@ section {
 .close:focus .icon {
   fill: var(--accent-color);
 }
-.modal-form-field {
-  position: relative;
-  margin-bottom: 10px;
-}
 
-.form-text {
+.form-title {
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 12px;
   color: var(--primary-text-color);
   font-weight: 700;
   font-size: 20px;
@@ -915,13 +920,69 @@ section {
   letter-spacing: 0.03em;
 }
 
-.form-input {
+.info-form-field {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.info-form-field .form-label,
+.comment-form-field .form-label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: var(--secondary-text-color);
+}
+
+.input-area {
+  position: relative;
+}
+
+.input-area .form-input {
   width: 100%;
   margin: 0;
   padding: 0;
-  padding-left: 40px;
-  padding-right: 40px;
-
-  border: 1px solid rgba(33, 33, 33, 0.2);
+  height: 40px;
+  padding-left: 42px;
+  font: inherit;
+  border: 1px solid var(--form-modal-border-color);
   border-radius: 4px;
+}
+
+.input-area .icon {
+  fill: var(--primary-text-color);
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 11px;
+  left: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment-form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.comment-text {
+  height: 120px;
+  padding: 12px 16px;
+  border: 1px solid var(--form-modal-border-color);
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: var(--modal-comment-text);
+}
+
+.checkbox {
 }
