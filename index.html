@@ -45,7 +45,7 @@
         <section class="hero background">
             <div class="container">
                 <h1 class="hero-title">Эффективные решения <br> для вашего бизнеса</h1>
-                <button class="button primary link" data-modal-open>Заказать услугу></button>
+                <button class="button primary link" data-modal-open>Заказать услугу</button>
                 <!-- <a href="" class="button primary link" data-modal-open>Заказать услугу</a> -->
             </div>
             
@@ -403,10 +403,16 @@
                         <span class="form-label">Комментарий</span>
                         <textarea class="comment-text" 
                         name="comment" rows="10" cols="45" placeholder="Введите текст"></textarea>
-                    </label 
-                    
+                    </label>
+
                     <label class="checkbox-field">
-                        <input class="checkbox" type="checkbox" name="topic" value="">Соглашаюсь с рассылкой и принимаю Условия договора
+                        <input class="checkbox-input" type="checkbox" name="topic" value="document"/>
+                        <span class="check-square"></span>
+                        <svg class="checkbox-icon" width="16" height="15">
+                            <use href="./images/sprite.svg#icon-check"></use>
+                        </svg>
+                        <span class="checkbox-text">Соглашаюсь с рассылкой и принимаю 
+                            <a href="">Условия договора</a></span> 
                     </label>
                     
         
