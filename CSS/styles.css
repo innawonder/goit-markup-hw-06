@@ -651,9 +651,11 @@ section {
 .form-input {
   margin: 0;
   margin-right: 12px;
-  padding: 15px 295px 15px 16px;
+  padding: 15px 16px 15px 16px;
   width: 358px;
   height: 50px;
+
+  color: var(--primary-background);
   background: transparent;
   border: 1px solid var(--form-border-color);
   box-sizing: border-box;
@@ -661,7 +663,7 @@ section {
   border-radius: 4px;
 }
 
-.form-input:placeholder {
+.form-input::placeholder {
   color: var(--contacts-color-footer);
   font-size: 16px;
   line-height: 1.25;
@@ -958,7 +960,7 @@ section {
   position: absolute;
   width: 18px;
   height: 18px;
-  top: 11px;
+  top: 0px;
   left: 12px;
   align-items: center;
   justify-content: center;
@@ -1018,30 +1020,6 @@ section {
   -moz-appearance: none;
 }
 
-.checkbox-input + .checkbox-icon {
-  display: inline-block;
-  width: 16px;
-  height: 15px;
-  margin-right: 8px;
-
-  background-color: var(--primary-background);
-  border: 2px solid var(--primary-text-color);
-  border-radius: 4px;
-
-  transition: transform 250ms linear;
-}
-
-.checkbox-input:checked + .checkbox-icon {
-  background-color: var(--accent-color);
-  background-image: url("../images/check.svg");
-  background-size: contain;
-  background-origin: border-box;
-  border-color: transparent;
-  border-radius: 2px;
-
-  transform: scale(1.2);
-}
-
 .checkbox-text {
   font-weight: 400;
   font-size: 14px;
@@ -1058,6 +1036,33 @@ section {
   text-decoration-line: underline;
 
   color: var(--accent-color);
+}
+
+.checkbox-text::before {
+  position: absolute;
+  content: " ";
+  display: inline-block;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+  background-color: var(--primary-background);
+  border: 2px solid var(--primary-text-color);
+  border-radius: 4px;
+
+  transition: border-color 250ms var(--timing-function),
+    background-color 250ms var(--timing-function);
+}
+
+.checkbox-input:checked + .checkbox-text::before {
+  background-color: var(--accent-color);
+  background-image: url("../images/check.svg");
+  background-size: contain;
+  background-origin: border-box;
+  border-color: transparent;
+  border-radius: 4px;
 }
 
 .modal-button {
